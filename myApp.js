@@ -1,11 +1,9 @@
 let express = require('express');
 let app = express();
 
-app.get('/name', function(req, res) {
-  const firstName = req.query.first;
-  const lastName = req.query.last;
-  res.json({ name: `${firstName} ${lastName}` });
-});
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
