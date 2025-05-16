@@ -5,8 +5,8 @@ console.log("Hello Word");
 
 const path = __dirname + '/views/index.html';
 
-app.get('/', function(req, res) {
-  res.sendFile(path);
+app.get('/json', function(req, res) {
+  res.json({ message: "Hello json" });
 });
 
 app.use('/public', express.static(__dirname + '/public'));
